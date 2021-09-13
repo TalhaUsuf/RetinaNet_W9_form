@@ -50,25 +50,29 @@ custom.yaml
 
 | Train | Test |
 |:-------: | :---------: |
-|![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/814d69199694a6f01d668e69ac95e456234f70743ca442e75d12aa377076db10-image.png) | ![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/e0a8ba43b5b4ae80dfe0d1b0011037980b6825d35420ac912db1b4c3d7327288-image.png)
- |
+|![](imgs/20210913-154428.png)|    ![](imgs/20210913-154523.png)   |
+
 
 
 
 # Annotation Fields
 
+|Class | Index |
+|----: | :----|
+|tl1| 0 |
+|tl2| 1 |
+|c1|2|
+|c2|3|
+|p11|4|
+|p12|5|
 
- - p11
- - p12
- - tl1
- - tl2
- - c1
- - c2
+
+# Sample Annotations
  
 | | |
 | :----: | :------: |
-|![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/14b9f757003e0b941c993b24b133b19ce738107758c8e0577754411880c66b2f-image.png) | ![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/1822367545ed5cbc184ef76e672c85a5f0cd100b2dc977f97be10b6ec9fa294d-image.png) |
-| ![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/11f89eeb807834367f88f59727a229f8bfcf38bce1cb2b14d68ef635e617fc37-image.png) | ![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/88466e4afb88b0d7ccfff30349cc83036fa86d3aee25b67b101128ee317c9b4a-image.png) |
+|![](imgs/20210913-154727.png) | ![](imgs/20210913-154744.png)|
+| ![](imgs/20210913-154803.png) | ![](imgs/20210913-154820.png)|
 
 
 
@@ -119,10 +123,10 @@ Database must have following fields - see[[1]](#1), [[2]](#2):
  - 'other-pages-path' path of the folder containing other i.e. non-W9 pages
 ----
 
-<a index="1">[1] E. Cerami, “Integrating FastAPI and MongoDB,” FastAPI Tutorials, Mar. 28, 2021. https://medium.com/fastapi-tutorials/integrating-fastapi-and-mongodb-8ef4f2ca68ad (accessed Sep. 10, 2021).
+<a id="1">[1] E. Cerami, “Integrating FastAPI and MongoDB,” FastAPI Tutorials, Mar. 28, 2021. https://medium.com/fastapi-tutorials/integrating-fastapi-and-mongodb-8ef4f2ca68ad (accessed Sep. 10, 2021).
 </a>
 
-<a index="2"> [2] N. Jayatilake, “How to get started with MongoDB in 10 minutes,” We’ve moved to freeCodeCamp.org/news, Feb. 11, 2019. https://medium.com/free-code-camp/learn-mongodb-a4ce205e7739 (accessed Sep. 10, 2021).
+<a id="2"> [2] N. Jayatilake, “How to get started with MongoDB in 10 minutes,” We’ve moved to freeCodeCamp.org/news, Feb. 11, 2019. https://medium.com/free-code-camp/learn-mongodb-a4ce205e7739 (accessed Sep. 10, 2021).
 </a>
 
 
@@ -176,32 +180,7 @@ custom.yaml
 ```
 
 
-# ANNOTATIONS DISTRIBUTION
 
-| Train | Test |
-|:-------: | :---------: |
-|![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/814d69199694a6f01d668e69ac95e456234f70743ca442e75d12aa377076db10-image.png) | ![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/e0a8ba43b5b4ae80dfe0d1b0011037980b6825d35420ac912db1b4c3d7327288-image.png)
- |
-
-
-
-# Annotation Fields
-
-Class | Index
-----: | :----
-|tl1|0|
-|tl2|1|
-|c1|2|
-|c2|3|
-|p11|4|
-|p12|5|
-
-# Sample Annotations
-
-| | |
-| :----: | :------: |
-|![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/14b9f757003e0b941c993b24b133b19ce738107758c8e0577754411880c66b2f-image.png) | ![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/1822367545ed5cbc184ef76e672c85a5f0cd100b2dc977f97be10b6ec9fa294d-image.png) |
-| ![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/11f89eeb807834367f88f59727a229f8bfcf38bce1cb2b14d68ef635e617fc37-image.png) | ![image.png](https://boostnote.io/api/teams/QCauNH2r-/files/88466e4afb88b0d7ccfff30349cc83036fa86d3aee25b67b101128ee317c9b4a-image.png) |
 
 
 
