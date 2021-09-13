@@ -14,7 +14,7 @@ from detectron2.structures import Boxes, BoxMode, Instances
 from detectron2.utils.file_io import PathManager
 from detectron2.utils.logger import setup_logger
 from detectron2.utils.visualizer import Visualizer
-
+from detectron2.data.datasets import register_coco_instances
 
 def create_instances(predictions, image_size):
     ret = Instances(image_size)
@@ -39,6 +39,20 @@ def create_instances(predictions, image_size):
 
 
 if __name__ == "__main__":
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    #                    added by talha
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    register_coco_instances("w9train", {}, "/home/talha/Desktop/w9_train_coco/labels.json", "/home/talha/Desktop/w9_train_coco/data")
+    register_coco_instances("w9test", {}, "/home/talha/Desktop/w9_test_coco/labels.json", "/home/talha/Desktop/w9_test_coco/data")
+
+
+
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    
+    
+
     parser = argparse.ArgumentParser(
         description="A script that visualizes the json predictions from COCO or LVIS dataset."
     )
