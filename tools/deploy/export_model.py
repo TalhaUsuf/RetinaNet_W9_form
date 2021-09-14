@@ -6,25 +6,25 @@ from typing import Dict, List, Tuple
 import torch
 from torch import Tensor, nn
 
-import detectron2.data.transforms as T
-from detectron2.checkpoint import DetectionCheckpointer
-from detectron2.config import get_cfg
-from detectron2.data import build_detection_test_loader, detection_utils
-from detectron2.evaluation import COCOEvaluator, inference_on_dataset, print_csv_format
-from detectron2.export import (
+import detectron.data.transforms as T
+from detectron.checkpoint import DetectionCheckpointer
+from detectron.config import get_cfg
+from detectron.data import build_detection_test_loader, detection_utils
+from detectron.evaluation import COCOEvaluator, inference_on_dataset, print_csv_format
+from detectron.export import (
     Caffe2Tracer,
     TracingAdapter,
     add_export_config,
     dump_torchscript_IR,
     scripting_with_instances,
 )
-from detectron2.modeling import GeneralizedRCNN, RetinaNet, build_model
-from detectron2.modeling.postprocessing import detector_postprocess
-from detectron2.projects.point_rend import add_pointrend_config
-from detectron2.structures import Boxes
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.file_io import PathManager
-from detectron2.utils.logger import setup_logger
+from detectron.modeling import GeneralizedRCNN, RetinaNet, build_model
+from detectron.modeling.postprocessing import detector_postprocess
+from detectron.projects.point_rend import add_pointrend_config
+from detectron.structures import Boxes
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.file_io import PathManager
+from detectron.utils.logger import setup_logger
 
 
 def setup_cfg(args):

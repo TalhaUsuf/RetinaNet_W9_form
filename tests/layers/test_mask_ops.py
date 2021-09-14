@@ -13,17 +13,17 @@ from pycocotools.coco import COCO
 from tabulate import tabulate
 from torch.nn import functional as F
 
-from detectron2.data import MetadataCatalog
-from detectron2.layers.mask_ops import (
+from detectron.data import MetadataCatalog
+from detectron.layers.mask_ops import (
     pad_masks,
     paste_mask_in_image_old,
     paste_masks_in_image,
     scale_boxes,
 )
-from detectron2.structures import BitMasks, Boxes, BoxMode, PolygonMasks
-from detectron2.structures.masks import polygons_to_bitmask
-from detectron2.utils.file_io import PathManager
-from detectron2.utils.testing import random_boxes
+from detectron.structures import BitMasks, Boxes, BoxMode, PolygonMasks
+from detectron.structures.masks import polygons_to_bitmask
+from detectron.utils.file_io import PathManager
+from detectron.utils.testing import random_boxes
 
 
 def iou_between_full_image_bit_masks(a, b):

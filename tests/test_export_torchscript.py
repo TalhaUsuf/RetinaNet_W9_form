@@ -7,19 +7,19 @@ import unittest
 import torch
 from torch import Tensor, nn
 
-from detectron2 import model_zoo
-from detectron2.config import get_cfg
-from detectron2.config.instantiate import dump_dataclass, instantiate
-from detectron2.export import dump_torchscript_IR, scripting_with_instances
-from detectron2.export.flatten import TracingAdapter, flatten_to_tuple
-from detectron2.export.torchscript_patch import patch_builtin_len
-from detectron2.layers import ShapeSpec
-from detectron2.modeling import build_backbone
-from detectron2.modeling.postprocessing import detector_postprocess
-from detectron2.modeling.roi_heads import KRCNNConvDeconvUpsampleHead
-from detectron2.structures import Boxes, Instances
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.testing import (
+from detectron import model_zoo
+from detectron.config import get_cfg
+from detectron.config.instantiate import dump_dataclass, instantiate
+from detectron.export import dump_torchscript_IR, scripting_with_instances
+from detectron.export.flatten import TracingAdapter, flatten_to_tuple
+from detectron.export.torchscript_patch import patch_builtin_len
+from detectron.layers import ShapeSpec
+from detectron.modeling import build_backbone
+from detectron.modeling.postprocessing import detector_postprocess
+from detectron.modeling.roi_heads import KRCNNConvDeconvUpsampleHead
+from detectron.structures import Boxes, Instances
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.testing import (
     assert_instances_allclose,
     convert_scripted_instances,
     get_sample_coco_image,

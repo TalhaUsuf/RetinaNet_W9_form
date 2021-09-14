@@ -1,5 +1,5 @@
-from detectron2.model_zoo import model_zoo
-from detectron2.config import get_cfg
+from detectron.model_zoo import model_zoo
+from detectron.config import get_cfg
 from rich.console import Console
 import json
 import yaml

@@ -96,10 +96,10 @@ for m in [
 # fmt: on
 sys.modules["cv2"].__version__ = "3.4"
 
-import detectron2  # isort: skip
+import detectron  # isort: skip
 
 if HAS_TORCH:
-    from detectron2.utils.env import fixup_module_metadata
+    from detectron.utils.env import fixup_module_metadata
 
     fixup_module_metadata("torch.nn", torch.nn.__dict__)
     fixup_module_metadata("torch.utils.data", torch.utils.data.__dict__)
@@ -110,7 +110,7 @@ copyright = "2019-2020, detectron2 contributors"
 author = "detectron2 contributors"
 
 # The short X.Y version
-version = detectron2.__version__
+version = detectron.__version__
 # The full version, including alpha/beta/rc tags
 release = version
 

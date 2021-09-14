@@ -2,12 +2,12 @@
 import numpy as np
 from typing import Any, List
 
-from detectron2.modeling import ROI_MASK_HEAD_REGISTRY
-from detectron2.modeling.roi_heads.mask_head import MaskRCNNConvUpsampleHead, mask_rcnn_inference
-from detectron2.projects.point_rend import ImplicitPointRendMaskHead
-from detectron2.projects.point_rend.point_features import point_sample
-from detectron2.projects.point_rend.point_head import roi_mask_point_loss
-from detectron2.structures import Instances
+from detectron.modeling import ROI_MASK_HEAD_REGISTRY
+from detectron.modeling.roi_heads.mask_head import MaskRCNNConvUpsampleHead, mask_rcnn_inference
+from detectron.projects.point_rend import ImplicitPointRendMaskHead
+from detectron.projects.point_rend.point_features import point_sample
+from detectron.projects.point_rend.point_head import roi_mask_point_loss
+from detectron.structures import Instances
 
 from .point_utils import get_point_coords_from_point_annotation
 

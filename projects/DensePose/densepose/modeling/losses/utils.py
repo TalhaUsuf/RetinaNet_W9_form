@@ -6,7 +6,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import torch
 from torch.nn import functional as F
 
-from detectron2.structures import BoxMode, Instances
+from detectron.structures import BoxMode, Instances
 
 from densepose import DensePoseDataRelative
 

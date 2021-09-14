@@ -3,7 +3,7 @@
 import unittest
 import torch
 
-from detectron2.structures import Boxes, BoxMode, Instances
+from detectron.structures import Boxes, BoxMode, Instances
 
 from densepose.modeling.losses.embed_utils import CseAnnotationsAccumulator
 from densepose.structures import DensePoseDataRelative, DensePoseList

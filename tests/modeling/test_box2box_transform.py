@@ -3,9 +3,9 @@ import logging
 import unittest
 import torch
 
-from detectron2.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.testing import random_boxes
+from detectron.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.testing import random_boxes
 
 logger = logging.getLogger(__name__)
 

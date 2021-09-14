@@ -23,8 +23,9 @@ as explained in the [Dataloader tutorial](data_loading).
 ## Basic Usage
 
 The basic usage of feature (1) and (2) is like the following:
+
 ```python
-from detectron2.data import transforms as T
+from detectron.data import transforms as T
 # Define a sequence of augmentations:
 augs = T.AugmentationList([
     T.RandomBrightness(0.9, 1.1),

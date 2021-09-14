@@ -3,8 +3,8 @@ import unittest
 from typing import List
 import torch
 
-from detectron2.config import get_cfg
-from detectron2.modeling.matcher import Matcher
+from detectron.config import get_cfg
+from detectron.modeling.matcher import Matcher
 
 
 class TestMatcher(unittest.TestCase):
@@ -25,7 +25,7 @@ class TestMatcher(unittest.TestCase):
 
         # nonzero_tuple must be import explicitly to let jit know what it is.
         # https://github.com/pytorch/pytorch/issues/38964
-        from detectron2.layers import nonzero_tuple  # noqa F401
+        from detectron.layers import nonzero_tuple  # noqa F401
 
         def f(thresholds: List[float], labels: List[int]):
             return Matcher(thresholds, labels, allow_low_quality_matches=True)

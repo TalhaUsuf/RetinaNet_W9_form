@@ -2,7 +2,7 @@
 import unittest
 import torch
 
-from detectron2.structures.keypoints import Keypoints
+from detectron.structures.keypoints import Keypoints
 
 
 class TestKeypoints(unittest.TestCase):

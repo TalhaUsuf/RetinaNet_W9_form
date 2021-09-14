@@ -1,7 +1,7 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 from itertools import count
 
-from detectron2.config import LazyCall as L
+from detectron.config import LazyCall as L
 
 from .dir1.dir1_a import dir1a_dict, dir1a_str
 

@@ -2,7 +2,7 @@
 
 from typing import Optional
 
-from detectron2.data import DatasetCatalog, MetadataCatalog
+from detectron.data import DatasetCatalog, MetadataCatalog
 
 from ..utils import maybe_prepend_base_path
 from .dataset_type import DatasetType

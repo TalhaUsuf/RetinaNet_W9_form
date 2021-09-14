@@ -5,9 +5,9 @@ import numpy as np
 import torch
 
 # fmt: off
-from detectron2.data.detection_utils import \
+from detectron.data.detection_utils import \
     annotations_to_instances as base_annotations_to_instances
-from detectron2.data.detection_utils import \
+from detectron.data.detection_utils import \
     transform_instance_annotations as base_transform_instance_annotations
 
 # fmt: on

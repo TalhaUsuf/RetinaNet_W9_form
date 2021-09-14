@@ -3,13 +3,13 @@ import logging
 import unittest
 import torch
 
-from detectron2.layers import ShapeSpec
-from detectron2.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
-from detectron2.modeling.roi_heads.fast_rcnn import FastRCNNOutputLayers
-from detectron2.modeling.roi_heads.rotated_fast_rcnn import RotatedFastRCNNOutputLayers
-from detectron2.structures import Boxes, Instances, RotatedBoxes
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.events import EventStorage
+from detectron.layers import ShapeSpec
+from detectron.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
+from detectron.modeling.roi_heads.fast_rcnn import FastRCNNOutputLayers
+from detectron.modeling.roi_heads.rotated_fast_rcnn import RotatedFastRCNNOutputLayers
+from detectron.structures import Boxes, Instances, RotatedBoxes
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.events import EventStorage
 
 logger = logging.getLogger(__name__)
 
@@ -124,7 +124,7 @@ class FastRCNNTest(unittest.TestCase):
 
         model = Model(box_predictor)
 
-        from detectron2.export.torchscript_patch import patch_builtin_len
+        from detectron.export.torchscript_patch import patch_builtin_len
 
         with torch.no_grad(), patch_builtin_len():
             func = torch.jit.trace(model, (torch.randn(10, 20), torch.randn(10, 4)))
@@ -157,7 +157,7 @@ class FastRCNNTest(unittest.TestCase):
 
         model = Model(box_predictor)
 
-        from detectron2.export.torchscript_patch import patch_builtin_len
+        from detectron.export.torchscript_patch import patch_builtin_len
 
         with torch.no_grad(), patch_builtin_len():
             func = torch.jit.trace(model, (torch.randn(10, 6), torch.rand(10, 4)))

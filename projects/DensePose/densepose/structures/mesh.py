@@ -5,7 +5,7 @@ from functools import lru_cache
 from typing import Dict, Optional, Tuple
 import torch
 
-from detectron2.utils.file_io import PathManager
+from detectron.utils.file_io import PathManager
 
 from densepose.data.meshes.catalog import MeshCatalog, MeshInfo
 

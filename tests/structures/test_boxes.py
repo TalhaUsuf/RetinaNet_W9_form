@@ -5,9 +5,9 @@ import numpy as np
 import unittest
 import torch
 
-from detectron2.structures import Boxes, BoxMode, pairwise_ioa, pairwise_iou
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.testing import reload_script_model
+from detectron.structures import Boxes, BoxMode, pairwise_ioa, pairwise_iou
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.testing import reload_script_model
 
 
 class TestBoxMode(unittest.TestCase):

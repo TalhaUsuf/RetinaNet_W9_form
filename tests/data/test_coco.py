@@ -6,9 +6,9 @@ import tempfile
 import unittest
 import pycocotools.mask as mask_util
 
-from detectron2.data import DatasetCatalog, MetadataCatalog
-from detectron2.data.datasets.coco import convert_to_coco_dict, load_coco_json
-from detectron2.structures import BoxMode
+from detectron.data import DatasetCatalog, MetadataCatalog
+from detectron.data.datasets.coco import convert_to_coco_dict, load_coco_json
+from detectron.structures import BoxMode
 
 
 def make_mask():

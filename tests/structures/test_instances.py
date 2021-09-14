@@ -3,10 +3,10 @@ import unittest
 import torch
 from torch import Tensor
 
-from detectron2.export.torchscript import patch_instances
-from detectron2.structures import Boxes, Instances
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.testing import convert_scripted_instances
+from detectron.export.torchscript import patch_instances
+from detectron.structures import Boxes, Instances
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.testing import convert_scripted_instances
 
 
 class TestInstances(unittest.TestCase):

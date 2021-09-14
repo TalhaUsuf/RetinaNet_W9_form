@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List, Optional
 
-from detectron2.structures import Instances
+from detectron.structures import Instances
 
 ModelOutput = Dict[str, Any]
 SampledData = Dict[str, Any]

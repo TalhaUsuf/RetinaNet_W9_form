@@ -5,9 +5,9 @@ import numpy as np
 from typing import List, Union
 import torch
 
-import detectron2.data.detection_utils as utils
-import detectron2.data.transforms as T
-from detectron2.config import configurable
+import detectron.data.detection_utils as utils
+import detectron.data.transforms as T
+from detectron.config import configurable
 
 from .detection_utils import annotations_to_instances, transform_instance_annotations
 

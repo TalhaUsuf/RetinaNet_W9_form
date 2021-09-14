@@ -3,13 +3,13 @@
 import unittest
 import torch
 
-import detectron2.export.torchscript  # apply patch # noqa
-from detectron2 import model_zoo
-from detectron2.config import get_cfg
-from detectron2.layers import ShapeSpec
-from detectron2.modeling.backbone import build_resnet_backbone
-from detectron2.modeling.backbone.fpn import build_resnet_fpn_backbone
-from detectron2.utils.env import TORCH_VERSION
+import detectron.export.torchscript  # apply patch # noqa
+from detectron import model_zoo
+from detectron.config import get_cfg
+from detectron.layers import ShapeSpec
+from detectron.modeling.backbone import build_resnet_backbone
+from detectron.modeling.backbone.fpn import build_resnet_fpn_backbone
+from detectron.utils.env import TORCH_VERSION
 
 
 class TestBackBone(unittest.TestCase):

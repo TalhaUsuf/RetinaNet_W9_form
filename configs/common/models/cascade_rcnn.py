@@ -1,8 +1,8 @@
-from detectron2.config import LazyCall as L
-from detectron2.layers import ShapeSpec
-from detectron2.modeling.box_regression import Box2BoxTransform
-from detectron2.modeling.matcher import Matcher
-from detectron2.modeling.roi_heads import FastRCNNOutputLayers, FastRCNNConvFCHead, CascadeROIHeads
+from detectron.config import LazyCall as L
+from detectron.layers import ShapeSpec
+from detectron.modeling.box_regression import Box2BoxTransform
+from detectron.modeling.matcher import Matcher
+from detectron.modeling.roi_heads import FastRCNNOutputLayers, FastRCNNConvFCHead, CascadeROIHeads
 
 from .mask_rcnn_fpn import model
 

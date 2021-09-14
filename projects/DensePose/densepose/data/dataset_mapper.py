@@ -6,12 +6,12 @@ import logging
 from typing import Any, Dict, List, Tuple
 import torch
 
-from detectron2.data import MetadataCatalog
-from detectron2.data import detection_utils as utils
-from detectron2.data import transforms as T
-from detectron2.layers import ROIAlign
-from detectron2.structures import BoxMode
-from detectron2.utils.file_io import PathManager
+from detectron.data import MetadataCatalog
+from detectron.data import detection_utils as utils
+from detectron.data import transforms as T
+from detectron.layers import ROIAlign
+from detectron.structures import BoxMode
+from detectron.utils.file_io import PathManager
 
 from densepose.structures import DensePoseDataRelative, DensePoseList, DensePoseTransformData
 

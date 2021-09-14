@@ -8,9 +8,9 @@ from contextlib import contextmanager
 from copy import deepcopy
 import torch
 
-from detectron2.structures import BitMasks, Boxes, ImageList, Instances
-from detectron2.utils.events import EventStorage
-from detectron2.utils.testing import get_model_no_weights
+from detectron.structures import BitMasks, Boxes, ImageList, Instances
+from detectron.utils.events import EventStorage
+from detectron.utils.testing import get_model_no_weights
 
 
 @contextmanager

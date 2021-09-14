@@ -5,7 +5,7 @@ from typing import Any, Iterable, List, Optional
 import torch
 from torch.nn import functional as F
 
-from detectron2.structures import Instances
+from detectron.structures import Instances
 
 
 @dataclass

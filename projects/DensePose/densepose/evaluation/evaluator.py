@@ -15,13 +15,13 @@ import torch
 from pycocotools.coco import COCO
 from tabulate import tabulate
 
-from detectron2.config import CfgNode
-from detectron2.data import MetadataCatalog
-from detectron2.evaluation import DatasetEvaluator
-from detectron2.structures import BoxMode
-from detectron2.utils.comm import gather, get_rank, is_main_process, synchronize
-from detectron2.utils.file_io import PathManager
-from detectron2.utils.logger import create_small_table
+from detectron.config import CfgNode
+from detectron.data import MetadataCatalog
+from detectron.evaluation import DatasetEvaluator
+from detectron.structures import BoxMode
+from detectron.utils.comm import gather, get_rank, is_main_process, synchronize
+from detectron.utils.file_io import PathManager
+from detectron.utils.logger import create_small_table
 
 from densepose.converters import ToChartResultConverter, ToMaskConverter
 from densepose.data.datasets.coco import maybe_filter_and_map_categories_cocoapi

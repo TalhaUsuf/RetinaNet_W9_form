@@ -4,7 +4,7 @@ import os
 import tempfile
 import unittest
 
-from detectron2.utils.events import CommonMetricPrinter, EventStorage, JSONWriter
+from detectron.utils.events import CommonMetricPrinter, EventStorage, JSONWriter
 
 
 class TestEventWriter(unittest.TestCase):

@@ -7,11 +7,11 @@ import unittest
 import torch
 from fvcore.common.benchmark import benchmark
 
-from detectron2.layers.rotated_boxes import pairwise_iou_rotated
-from detectron2.structures.boxes import Boxes
-from detectron2.structures.rotated_boxes import RotatedBoxes, pairwise_iou
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.testing import reload_script_model
+from detectron.layers.rotated_boxes import pairwise_iou_rotated
+from detectron.structures.boxes import Boxes
+from detectron.structures.rotated_boxes import RotatedBoxes, pairwise_iou
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.testing import reload_script_model
 
 logger = logging.getLogger(__name__)
 

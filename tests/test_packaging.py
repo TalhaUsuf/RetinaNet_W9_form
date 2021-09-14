@@ -1,16 +1,16 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 import unittest
 
-from detectron2.utils.collect_env import collect_env_info
+from detectron.utils.collect_env import collect_env_info
 
 
 class TestProjects(unittest.TestCase):
     def test_import(self):
-        from detectron2.projects import point_rend
+        from detectron.projects import point_rend
 
         _ = point_rend.add_pointrend_config
 
-        import detectron2.projects.deeplab as deeplab
+        import detectron.projects.deeplab as deeplab
 
         _ = deeplab.add_deeplab_config
 

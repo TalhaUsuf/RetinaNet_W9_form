@@ -3,8 +3,8 @@
 import torch
 from torch import nn
 
-from detectron2.config import CfgNode
-from detectron2.layers import ConvTranspose2d, interpolate
+from detectron.config import CfgNode
+from detectron.layers import ConvTranspose2d, interpolate
 
 from ...structures import DensePoseChartPredictorOutput
 from ..utils import initialize_module_params

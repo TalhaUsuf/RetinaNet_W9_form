@@ -4,8 +4,8 @@
 import unittest
 import torch
 
-from detectron2.utils.analysis import flop_count_operators, parameter_count
-from detectron2.utils.testing import get_model_no_weights
+from detectron.utils.analysis import flop_count_operators, parameter_count
+from detectron.utils.testing import get_model_no_weights
 
 
 class RetinaNetTest(unittest.TestCase):

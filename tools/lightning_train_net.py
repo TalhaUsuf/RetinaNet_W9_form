@@ -12,11 +12,11 @@ import weakref
 from collections import OrderedDict
 from typing import Any, Dict, List
 
-import detectron2.utils.comm as comm
-from detectron2.checkpoint import DetectionCheckpointer
-from detectron2.config import get_cfg
-from detectron2.data import build_detection_test_loader, build_detection_train_loader
-from detectron2.engine import (
+import detectron.utils.comm as comm
+from detectron.checkpoint import DetectionCheckpointer
+from detectron.config import get_cfg
+from detectron.data import build_detection_test_loader, build_detection_train_loader
+from detectron.engine import (
     DefaultTrainer,
     SimpleTrainer,
     default_argument_parser,
@@ -24,12 +24,12 @@ from detectron2.engine import (
     default_writers,
     hooks,
 )
-from detectron2.evaluation import print_csv_format
-from detectron2.evaluation.testing import flatten_results_dict
-from detectron2.modeling import build_model
-from detectron2.solver import build_lr_scheduler, build_optimizer
-from detectron2.utils.events import EventStorage
-from detectron2.utils.logger import setup_logger
+from detectron.evaluation import print_csv_format
+from detectron.evaluation.testing import flatten_results_dict
+from detectron.modeling import build_model
+from detectron.solver import build_lr_scheduler, build_optimizer
+from detectron.utils.events import EventStorage
+from detectron.utils.logger import setup_logger
 
 import pytorch_lightning as pl  # type: ignore
 from pytorch_lightning import LightningDataModule, LightningModule

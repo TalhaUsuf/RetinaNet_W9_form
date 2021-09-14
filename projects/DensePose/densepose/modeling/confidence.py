@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from detectron2.config import CfgNode
+from detectron.config import CfgNode
 
 
 class DensePoseUVConfidenceType(Enum):

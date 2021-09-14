@@ -1,13 +1,13 @@
-from detectron2.config import LazyCall as L
-from detectron2.layers import ShapeSpec
-from detectron2.modeling.meta_arch import GeneralizedRCNN
-from detectron2.modeling.anchor_generator import DefaultAnchorGenerator
-from detectron2.modeling.backbone import BasicStem, BottleneckBlock, ResNet
-from detectron2.modeling.box_regression import Box2BoxTransform
-from detectron2.modeling.matcher import Matcher
-from detectron2.modeling.poolers import ROIPooler
-from detectron2.modeling.proposal_generator import RPN, StandardRPNHead
-from detectron2.modeling.roi_heads import (
+from detectron.config import LazyCall as L
+from detectron.layers import ShapeSpec
+from detectron.modeling.meta_arch import GeneralizedRCNN
+from detectron.modeling.anchor_generator import DefaultAnchorGenerator
+from detectron.modeling.backbone import BasicStem, BottleneckBlock, ResNet
+from detectron.modeling.box_regression import Box2BoxTransform
+from detectron.modeling.matcher import Matcher
+from detectron.modeling.poolers import ROIPooler
+from detectron.modeling.proposal_generator import RPN, StandardRPNHead
+from detectron.modeling.roi_heads import (
     FastRCNNOutputLayers,
     MaskRCNNConvUpsampleHead,
     Res5ROIHeads,

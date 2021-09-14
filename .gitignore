@@ -9,7 +9,7 @@ inference_test_output
 *.diff
 *.jpg
 !/projects/DensePose/doc/images/*.jpg
-
+*.zip
 # compilation and distribution
 __pycache__
 _ext
@@ -24,7 +24,6 @@ wheels/
 
 # pytorch/python/numpy formats
 *.pth
-*.pkl
 *.npy
 *.ts
 model_ts*.txt

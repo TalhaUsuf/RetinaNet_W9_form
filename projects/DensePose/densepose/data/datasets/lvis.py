@@ -4,10 +4,10 @@ import os
 from typing import Any, Dict, Iterable, List, Optional
 from fvcore.common.timer import Timer
 
-from detectron2.data import DatasetCatalog, MetadataCatalog
-from detectron2.data.datasets.lvis import get_lvis_instances_meta
-from detectron2.structures import BoxMode
-from detectron2.utils.file_io import PathManager
+from detectron.data import DatasetCatalog, MetadataCatalog
+from detectron.data.datasets.lvis import get_lvis_instances_meta
+from detectron.structures import BoxMode
+from detectron.utils.file_io import PathManager
 
 from ..utils import maybe_prepend_base_path
 from .coco import (

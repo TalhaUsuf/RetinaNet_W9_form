@@ -34,7 +34,7 @@ build_one() {
   for py in "${py_versions[@]}"; do
     docker run -itd \
       --name "$container_id" \
-      --mount type=bind,source="$(pwd)",target=/detectron2 \
+      --mount type=bind,source="$(pwd)",target=/detectron \
       pytorch/$container_name
 
     cat <<EOF | docker exec -i $container_id sh

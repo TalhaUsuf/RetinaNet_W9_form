@@ -1,6 +1,6 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
-from detectron2.data import MetadataCatalog
-from detectron2.utils.file_io import PathManager
+from detectron.data import MetadataCatalog
+from detectron.utils.file_io import PathManager
 
 from densepose import DensePoseTransformData
 

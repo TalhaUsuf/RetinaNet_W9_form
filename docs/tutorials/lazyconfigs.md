@@ -17,13 +17,14 @@ doesn't exist in Yaml:
 * Import / compose other config files, using the familiar Python import syntax.
 
 A Python config file can be loaded like this:
+
 ```python
 # config.py:
 a = dict(x=1, y=2, z=dict(xx=1))
 b = dict(x=3, y=4)
 
 # my_code.py:
-from detectron2.config import LazyConfig
+from detectron.config import LazyConfig
 cfg = LazyConfig.load("path/to/config.py")  # an omegaconf dictionary
 assert cfg.a.z.xx == 1
 ```
@@ -55,8 +56,9 @@ call to a function/class. The dictionary consists of:
 
 We provide a helper function [LazyCall](../modules/config.html#detectron2.config.LazyCall) that helps create such dictionaries.
 The following code using `LazyCall`
+
 ```python
-from detectron2.config import LazyCall as L
+from detectron.config import LazyCall as L
 from my_app import Trainer, Optimizer
 cfg = L(Trainer)(
   optimizer=L(Optimizer)(
@@ -79,8 +81,9 @@ cfg = {
 By representing objects using such dictionaries, a general
 [instantiate](../modules/config.html#detectron2.config.instantiate)
 function can turn them into actual objects, i.e.:
+
 ```python
-from detectron2.config import instantiate
+from detectron.config import instantiate
 trainer = instantiate(cfg)
 # equivalent to:
 # from my_app import Trainer, Optimizer

@@ -5,9 +5,9 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from detectron2.config import configurable
-from detectron2.layers import ASPP, Conv2d, DepthwiseSeparableConv2d, ShapeSpec, get_norm
-from detectron2.modeling import SEM_SEG_HEADS_REGISTRY
+from detectron.config import configurable
+from detectron.layers import ASPP, Conv2d, DepthwiseSeparableConv2d, ShapeSpec, get_norm
+from detectron.modeling import SEM_SEG_HEADS_REGISTRY
 
 from .loss import DeepLabCE
 

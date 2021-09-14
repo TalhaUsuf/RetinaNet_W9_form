@@ -3,7 +3,7 @@ import numpy as np
 import unittest
 import torch
 
-from detectron2.layers import DeformConv, ModulatedDeformConv
+from detectron.layers import DeformConv, ModulatedDeformConv
 
 
 class DeformableTest(unittest.TestCase):

@@ -3,9 +3,9 @@
 import os
 import torch
 
-from detectron2.config import get_cfg
-from detectron2.engine import default_setup
-from detectron2.modeling import build_model
+from detectron.config import get_cfg
+from detectron.engine import default_setup
+from detectron.modeling import build_model
 
 from densepose import add_densepose_config
 

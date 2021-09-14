@@ -4,6 +4,7 @@
 From a yacs config object,
 models (and their sub-models) can be built by
 functions such as `build_model`, `build_backbone`, `build_roi_heads`:
+
 ```python
 from detectron2.modeling import build_model
 model = build_model(cfg)  # returns a torch.nn.Module
@@ -13,6 +14,7 @@ model = build_model(cfg)  # returns a torch.nn.Module
 See below for how to load an existing checkpoint to the model and how to use the `model` object.
 
 ### Load/Save a Checkpoint
+
 ```python
 from detectron2.checkpoint import DetectionCheckpointer
 DetectionCheckpointer(model).load(file_path_or_url)  # load a file, usually from cfg.MODEL.WEIGHTS
@@ -40,6 +42,7 @@ The detailed format of inputs and outputs of existing models are explained below
 
 __Training__: When in training mode, all models are required to be used under an `EventStorage`.
 The training statistics will be put into the storage:
+
 ```python
 from detectron2.utils.events import EventStorage
 with EventStorage() as storage:

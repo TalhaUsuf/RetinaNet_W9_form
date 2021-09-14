@@ -5,8 +5,8 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from detectron2.config import CfgNode
-from detectron2.structures import Instances
+from detectron.config import CfgNode
+from detectron.structures import Instances
 
 from densepose.data.meshes.catalog import MeshCatalog
 from densepose.modeling.cse.utils import normalize_embeddings, squared_euclidean_distance_matrix

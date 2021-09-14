@@ -4,18 +4,18 @@ import sys
 import unittest
 import torch
 
-from detectron2.config import get_cfg
-from detectron2.export import scripting_with_instances
-from detectron2.layers import ShapeSpec
-from detectron2.modeling.backbone import build_backbone
-from detectron2.modeling.proposal_generator import RPN, build_proposal_generator
-from detectron2.modeling.proposal_generator.proposal_utils import (
+from detectron.config import get_cfg
+from detectron.export import scripting_with_instances
+from detectron.layers import ShapeSpec
+from detectron.modeling.backbone import build_backbone
+from detectron.modeling.proposal_generator import RPN, build_proposal_generator
+from detectron.modeling.proposal_generator.proposal_utils import (
     add_ground_truth_to_proposals,
     find_top_rpn_proposals,
 )
-from detectron2.structures import Boxes, ImageList, Instances, RotatedBoxes
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.events import EventStorage
+from detectron.structures import Boxes, ImageList, Instances, RotatedBoxes
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.events import EventStorage
 
 logger = logging.getLogger(__name__)
 

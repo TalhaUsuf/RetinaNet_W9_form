@@ -7,7 +7,7 @@ import torch
 from fvcore.common.param_scheduler import CosineParamScheduler, MultiStepParamScheduler
 from torch import nn
 
-from detectron2.solver import LRMultiplier, WarmupParamScheduler
+from detectron.solver import LRMultiplier, WarmupParamScheduler
 
 
 class TestScheduler(TestCase):

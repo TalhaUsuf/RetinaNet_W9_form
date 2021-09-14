@@ -23,7 +23,7 @@ from pycocotools import mask as maskUtils
 from scipy.io import loadmat
 from scipy.ndimage import zoom as spzoom
 
-from detectron2.utils.file_io import PathManager
+from detectron.utils.file_io import PathManager
 
 from densepose.converters.chart_output_to_chart_result import resample_uv_tensors_to_bbox
 from densepose.converters.segm_to_mask import (

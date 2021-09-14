@@ -1,7 +1,7 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 
-from detectron2.data.catalog import Metadata
-from detectron2.evaluation import COCOEvaluator
+from detectron.data.catalog import Metadata
+from detectron.evaluation import COCOEvaluator
 
 from densepose.data.datasets.coco import (
     get_contiguous_id_to_category_id_map,

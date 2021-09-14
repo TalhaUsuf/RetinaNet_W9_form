@@ -41,8 +41,8 @@ of custom data loading.
 For example, if you want to resize all images to a fixed size for training, use:
 
 ```python
-import detectron2.data.transforms as T
-from detectron2.data import DatasetMapper   # the default mapper
+import detectron.data.transforms as T
+from detectron.data import DatasetMapper   # the default mapper
 dataloader = build_detection_train_loader(cfg,
    mapper=DatasetMapper(cfg, is_train=True, augmentations=[
       T.Resize((800, 800))
@@ -53,7 +53,7 @@ If the arguments of the default [DatasetMapper](../modules/data.html#detectron2.
 does not provide what you need, you may write a custom mapper function and use it instead, e.g.:
 
 ```python
-from detectron2.data import detection_utils as utils
+from detectron.data import detection_utils as utils
  # Show how to implement a minimal mapper, similar to the default DatasetMapper
 def mapper(dataset_dict):
     dataset_dict = copy.deepcopy(dataset_dict)  # it will be modified by code below

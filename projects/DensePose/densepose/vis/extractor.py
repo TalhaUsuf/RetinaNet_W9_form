@@ -3,8 +3,8 @@ import logging
 from typing import List, Optional, Sequence, Tuple
 import torch
 
-from detectron2.layers.nms import batched_nms
-from detectron2.structures.instances import Instances
+from detectron.layers.nms import batched_nms
+from detectron.structures.instances import Instances
 
 from densepose.converters import ToChartResultConverterWithConfidences
 from densepose.structures import (

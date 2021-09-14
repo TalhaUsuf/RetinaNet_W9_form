@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Any, Optional
 import torch
 
-from detectron2.structures import BoxMode, Instances
+from detectron.structures import BoxMode, Instances
 
 from .utils import AnnotationsAccumulator
 

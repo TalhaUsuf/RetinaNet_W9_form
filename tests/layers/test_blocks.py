@@ -4,8 +4,8 @@ import unittest
 import torch
 from torch import nn
 
-from detectron2.layers import ASPP, DepthwiseSeparableConv2d, FrozenBatchNorm2d
-from detectron2.modeling.backbone.resnet import BasicStem, ResNet
+from detectron.layers import ASPP, DepthwiseSeparableConv2d, FrozenBatchNorm2d
+from detectron.modeling.backbone.resnet import BasicStem, ResNet
 
 
 """

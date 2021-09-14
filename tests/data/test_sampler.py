@@ -7,14 +7,14 @@ import torch
 from torch.utils import data
 from torch.utils.data.sampler import SequentialSampler
 
-from detectron2.data.build import worker_init_reset_seed
-from detectron2.data.common import DatasetFromList, ToIterableDataset
-from detectron2.data.samplers import (
+from detectron.data.build import worker_init_reset_seed
+from detectron.data.common import DatasetFromList, ToIterableDataset
+from detectron.data.samplers import (
     GroupedBatchSampler,
     RepeatFactorTrainingSampler,
     TrainingSampler,
 )
-from detectron2.utils.env import seed_all_rng
+from detectron.utils.env import seed_all_rng
 
 
 class TestGroupedBatchSampler(unittest.TestCase):

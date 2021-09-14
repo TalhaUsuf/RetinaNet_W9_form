@@ -8,9 +8,9 @@ import unittest
 import cv2
 import torch
 
-from detectron2.data import MetadataCatalog
-from detectron2.structures import BoxMode, Instances, RotatedBoxes
-from detectron2.utils.visualizer import ColorMode, Visualizer
+from detectron.data import MetadataCatalog
+from detectron.structures import BoxMode, Instances, RotatedBoxes
+from detectron.utils.visualizer import ColorMode, Visualizer
 
 
 class TestVisualizer(unittest.TestCase):

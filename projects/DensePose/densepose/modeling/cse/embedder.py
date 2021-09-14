@@ -8,8 +8,8 @@ from typing import Optional
 import torch
 from torch import nn
 
-from detectron2.config import CfgNode
-from detectron2.utils.file_io import PathManager
+from detectron.config import CfgNode
+from detectron.utils.file_io import PathManager
 
 from .vertex_direct_embedder import VertexDirectEmbedder
 from .vertex_feature_embedder import VertexFeatureEmbedder

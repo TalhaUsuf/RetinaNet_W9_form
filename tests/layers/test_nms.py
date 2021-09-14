@@ -3,8 +3,8 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import unittest
 import torch
 
-from detectron2.layers import batched_nms
-from detectron2.utils.testing import random_boxes
+from detectron.layers import batched_nms
+from detectron.utils.testing import random_boxes
 
 
 class TestNMS(unittest.TestCase):

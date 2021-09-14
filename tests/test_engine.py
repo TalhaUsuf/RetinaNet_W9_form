@@ -11,11 +11,11 @@ import torch
 from fvcore.common.checkpoint import Checkpointer
 from torch import nn
 
-from detectron2 import model_zoo
-from detectron2.config import configurable, get_cfg
-from detectron2.engine import DefaultTrainer, SimpleTrainer, default_setup, hooks
-from detectron2.modeling.meta_arch import META_ARCH_REGISTRY
-from detectron2.utils.events import CommonMetricPrinter, JSONWriter
+from detectron import model_zoo
+from detectron.config import configurable, get_cfg
+from detectron.engine import DefaultTrainer, SimpleTrainer, default_setup, hooks
+from detectron.modeling.meta_arch import META_ARCH_REGISTRY
+from detectron.utils.events import CommonMetricPrinter, JSONWriter
 
 
 @META_ARCH_REGISTRY.register()

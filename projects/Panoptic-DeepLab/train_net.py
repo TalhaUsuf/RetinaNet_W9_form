@@ -9,26 +9,26 @@ This script is a simplified version of the training script in detectron2/tools.
 import os
 import torch
 
-import detectron2.data.transforms as T
-import detectron2.utils.comm as comm
-from detectron2.checkpoint import DetectionCheckpointer
-from detectron2.config import get_cfg
-from detectron2.data import MetadataCatalog, build_detection_train_loader
-from detectron2.engine import DefaultTrainer, default_argument_parser, default_setup, launch
-from detectron2.evaluation import (
+import detectron.data.transforms as T
+import detectron.utils.comm as comm
+from detectron.checkpoint import DetectionCheckpointer
+from detectron.config import get_cfg
+from detectron.data import MetadataCatalog, build_detection_train_loader
+from detectron.engine import DefaultTrainer, default_argument_parser, default_setup, launch
+from detectron.evaluation import (
     CityscapesInstanceEvaluator,
     CityscapesSemSegEvaluator,
     COCOEvaluator,
     COCOPanopticEvaluator,
     DatasetEvaluators,
 )
-from detectron2.projects.deeplab import build_lr_scheduler
-from detectron2.projects.panoptic_deeplab import (
+from detectron.projects.deeplab import build_lr_scheduler
+from detectron.projects.panoptic_deeplab import (
     PanopticDeeplabDatasetMapper,
     add_panoptic_deeplab_config,
 )
-from detectron2.solver import get_default_optimizer_params
-from detectron2.solver.build import maybe_add_gradient_clipping
+from detectron.solver import get_default_optimizer_params
+from detectron.solver.build import maybe_add_gradient_clipping
 
 
 def build_sem_seg_train_aug(cfg):

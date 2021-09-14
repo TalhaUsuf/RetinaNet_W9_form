@@ -5,8 +5,8 @@ from ..common.coco_schedule import lr_multiplier_1x as lr_multiplier
 from ..common.optim import SGD as optimizer
 from ..common.train import train
 
-from detectron2.modeling.mmdet_wrapper import MMDetDetector
-from detectron2.config import LazyCall as L
+from detectron.modeling.mmdet_wrapper import MMDetDetector
+from detectron.config import LazyCall as L
 
 model = L(MMDetDetector)(
     detector=dict(

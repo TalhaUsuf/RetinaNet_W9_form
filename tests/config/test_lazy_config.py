@@ -4,7 +4,7 @@ import unittest
 import tempfile
 from itertools import count
 
-from detectron2.config import LazyConfig, LazyCall as L
+from detectron.config import LazyConfig, LazyCall as L
 
 
 class TestLazyPythonConfig(unittest.TestCase):

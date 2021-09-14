@@ -6,7 +6,7 @@ from typing import Dict, List, Optional, Tuple
 import cv2
 import torch
 
-from detectron2.utils.file_io import PathManager
+from detectron.utils.file_io import PathManager
 
 from densepose.modeling import build_densepose_embedder
 from densepose.modeling.cse.utils import get_closest_vertices_mask_from_ES

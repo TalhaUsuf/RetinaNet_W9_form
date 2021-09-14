@@ -1,5 +1,5 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
-from detectron2.config import LazyConfig
+from detectron.config import LazyConfig
 
 # equivalent to relative import
 dir1a_str, dir1a_dict = LazyConfig.load_rel("dir1_a.py", ("dir1a_str", "dir1a_dict"))

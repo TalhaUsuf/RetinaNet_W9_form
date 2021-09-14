@@ -1,6 +1,6 @@
 # Copyright (c) Facebook, Inc. and its affiliates.
 
-from detectron2.structures import BitMasks, Instances
+from detectron.structures import BitMasks, Instances
 
 from densepose.converters import ToMaskConverter
 

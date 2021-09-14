@@ -7,9 +7,9 @@ import tempfile
 import unittest
 import torch
 
-from detectron2 import model_zoo
-from detectron2.utils.logger import setup_logger
-from detectron2.utils.testing import get_sample_coco_image
+from detectron import model_zoo
+from detectron.utils.logger import setup_logger
+from detectron.utils.testing import get_sample_coco_image
 
 
 @unittest.skipIf(os.environ.get("CI"), "Require COCO data and model zoo.")
@@ -19,7 +19,7 @@ class TestCaffe2Export(unittest.TestCase):
 
     def _test_model(self, config_path, device="cpu"):
         # requires extra dependencies
-        from detectron2.export import Caffe2Model, add_export_config, Caffe2Tracer
+        from detectron.export import Caffe2Model, add_export_config, Caffe2Tracer
 
         cfg = model_zoo.get_config(config_path)
         add_export_config(cfg)

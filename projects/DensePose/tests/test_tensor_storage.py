@@ -8,7 +8,7 @@ import torch
 import torch.distributed as dist
 import torch.multiprocessing as mp
 
-from detectron2.utils import comm
+from detectron.utils import comm
 
 from densepose.evaluation.tensor_storage import (
     SingleProcessFileTensorStorage,

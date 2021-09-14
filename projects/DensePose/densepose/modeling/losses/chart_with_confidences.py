@@ -5,8 +5,8 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from detectron2.config import CfgNode
-from detectron2.structures import Instances
+from detectron.config import CfgNode
+from detectron.structures import Instances
 
 from .. import DensePoseConfidenceModelConfig, DensePoseUVConfidenceType
 from .chart import DensePoseChartLoss

@@ -14,8 +14,9 @@ we provide a registration mechanism for users to inject custom implementation th
 will be immediately available to use in config files.
 
 For example, to add a new backbone, import this code in your code:
+
 ```python
-from detectron2.modeling import BACKBONE_REGISTRY, Backbone, ShapeSpec
+from detectron.modeling import BACKBONE_REGISTRY, Backbone, ShapeSpec
 
 @BACKBONE_REGISTRY.register()
 class ToyBackbone(Backbone):

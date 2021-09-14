@@ -7,18 +7,18 @@ from typing import List, Optional, Union
 import torch
 from torch import nn
 
-from detectron2.checkpoint import DetectionCheckpointer
-from detectron2.config import CfgNode
-from detectron2.engine import DefaultTrainer
-from detectron2.evaluation import (
+from detectron.checkpoint import DetectionCheckpointer
+from detectron.config import CfgNode
+from detectron.engine import DefaultTrainer
+from detectron.evaluation import (
     DatasetEvaluator,
     DatasetEvaluators,
     inference_on_dataset,
     print_csv_format,
 )
-from detectron2.solver.build import get_default_optimizer_params, maybe_add_gradient_clipping
-from detectron2.utils import comm
-from detectron2.utils.events import EventWriter, get_event_storage
+from detectron.solver.build import get_default_optimizer_params, maybe_add_gradient_clipping
+from detectron.utils import comm
+from detectron.utils.events import EventWriter, get_event_storage
 
 from densepose import DensePoseDatasetMapperTTA, DensePoseGeneralizedRCNNWithTTA, load_from_cfg
 from densepose.data import (

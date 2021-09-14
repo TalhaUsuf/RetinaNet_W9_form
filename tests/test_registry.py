@@ -2,8 +2,8 @@
 import unittest
 import torch
 
-from detectron2.modeling.meta_arch import GeneralizedRCNN
-from detectron2.utils.registry import _convert_target_to_string, locate
+from detectron.modeling.meta_arch import GeneralizedRCNN
+from detectron.utils.registry import _convert_target_to_string, locate
 
 
 class A:
@@ -37,7 +37,7 @@ class TestLocate(unittest.TestCase):
             locate("asdf")
 
     def test_compress_target(self):
-        from detectron2.data.transforms import RandomCrop
+        from detectron.data.transforms import RandomCrop
 
         name = _convert_target_to_string(RandomCrop)
         # name shouldn't contain 'augmentation_impl'

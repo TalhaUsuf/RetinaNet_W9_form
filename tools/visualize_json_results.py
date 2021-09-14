@@ -9,12 +9,12 @@ from collections import defaultdict
 import cv2
 import tqdm
 
-from detectron2.data import DatasetCatalog, MetadataCatalog
-from detectron2.structures import Boxes, BoxMode, Instances
-from detectron2.utils.file_io import PathManager
-from detectron2.utils.logger import setup_logger
-from detectron2.utils.visualizer import Visualizer
-from detectron2.data.datasets import register_coco_instances
+from detectron.data import DatasetCatalog, MetadataCatalog
+from detectron.structures import Boxes, BoxMode, Instances
+from detectron.utils.file_io import PathManager
+from detectron.utils.logger import setup_logger
+from detectron.utils.visualizer import Visualizer
+from detectron.data.datasets import register_coco_instances
 
 def create_instances(predictions, image_size):
     ret = Instances(image_size)

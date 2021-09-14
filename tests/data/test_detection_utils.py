@@ -6,10 +6,10 @@ import os
 import unittest
 import pycocotools.mask as mask_util
 
-from detectron2.data import MetadataCatalog, detection_utils
-from detectron2.data import transforms as T
-from detectron2.structures import BitMasks, BoxMode
-from detectron2.utils.file_io import PathManager
+from detectron.data import MetadataCatalog, detection_utils
+from detectron.data import transforms as T
+from detectron.structures import BitMasks, BoxMode
+from detectron.utils.file_io import PathManager
 
 
 class TestTransformAnnotations(unittest.TestCase):

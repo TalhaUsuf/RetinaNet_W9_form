@@ -7,10 +7,10 @@ import unittest
 from unittest import mock
 from PIL import Image, ImageOps
 
-from detectron2.config import get_cfg
-from detectron2.data import detection_utils
-from detectron2.data import transforms as T
-from detectron2.utils.logger import setup_logger
+from detectron.config import get_cfg
+from detectron.data import detection_utils
+from detectron.data import transforms as T
+from detectron.utils.logger import setup_logger
 
 logger = logging.getLogger(__name__)
 

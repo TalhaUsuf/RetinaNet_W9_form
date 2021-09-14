@@ -2,7 +2,7 @@
 import numpy as np
 import unittest
 
-from detectron2.data.transforms.transform import RotationTransform
+from detectron.data.transforms.transform import RotationTransform
 
 
 class TestRotationTransform(unittest.TestCase):

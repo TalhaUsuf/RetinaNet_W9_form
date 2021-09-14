@@ -8,10 +8,10 @@ import unittest
 import torch
 from omegaconf import OmegaConf
 
-from detectron2 import model_zoo
-from detectron2.config import configurable, downgrade_config, get_cfg, upgrade_config
-from detectron2.layers import ShapeSpec
-from detectron2.modeling import build_model
+from detectron import model_zoo
+from detectron.config import configurable, downgrade_config, get_cfg, upgrade_config
+from detectron.layers import ShapeSpec
+from detectron.modeling import build_model
 
 _V0_CFG = """
 MODEL:

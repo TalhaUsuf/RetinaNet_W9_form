@@ -9,7 +9,8 @@ import time
 import warnings
 import cv2
 import tqdm
-
+import pandas as pd
+import joblib
 from detectron2.config import get_cfg
 from detectron2.data.detection_utils import read_image
 from detectron2.utils.logger import setup_logger
@@ -61,7 +62,7 @@ def get_parser():
     parser.add_argument(
         "--confidence-threshold",
         type=float,
-        default=0.5,
+        default=0.85,
         help="Minimum score for instance predictions to be shown",
     )
     parser.add_argument(
@@ -100,8 +101,8 @@ if __name__ == "__main__":
     cfg = setup_cfg(args)
 
     demo = VisualizationDemo(cfg)
-
     if args.input: # --input args
+        preds = {}
         if len(args.input) == 1: # glob style input dir. path
             args.input = glob.glob(os.path.expanduser(args.input[0]))
             assert args.input, "The input path(s) was not found"
@@ -110,7 +111,17 @@ if __name__ == "__main__":
             img = read_image(path, format="BGR")
             start_time = time.time()
             predictions, visualized_output = demo.run_on_image(img)
-            print(predictions["instances"].get_fields().keys())
+            print(predictions["instances"].get_fields().keys()) # dict_keys(['pred_boxes', 'scores', 'pred_classes'])
+            print(f"current dir. =====> {os.getcwd()}")
+
+            preds.setdefault("pred_boxes", []).append(predictions["instances"].get_fields()["pred_boxes"].tensor.cpu().numpy().tolist())
+            preds.setdefault("scores", []).append(predictions["instances"].get_fields()["scores"].cpu().numpy().tolist())
+            preds.setdefault("pred_classes", []).append(predictions["instances"].get_fields()["pred_classes"].cpu().numpy().tolist())
+
+
+
+
+
             # logger.info(f"visualized_output ---> \n {type(visualized_output)}")
             logger.info(
                 "{}: {} in {:.2f}s".format(
@@ -119,7 +130,7 @@ if __name__ == "__main__":
                     if "instances" in predictions
                     else "finished",
                     time.time() - start_time,
-                )
+                    )
             )
 
             if args.output:
@@ -136,6 +147,7 @@ if __name__ == "__main__":
                 if cv2.waitKey(0) == 27:
                     cv2.destroyAllWindows()
                     break  # esc to quit
+        joblib.dump(preds, f"./detections/preds.pkl")
     # elif args.webcam:
     #     assert args.input is None, "Cannot have both --input and --webcam!"
     #     assert args.output is None, "output not yet supported with --webcam!"

@@ -5,27 +5,27 @@ from copy import deepcopy
 import torch
 from torch import nn
 
-from detectron2 import model_zoo
-from detectron2.config import get_cfg
-from detectron2.export.torchscript_patch import (
+from detectron import model_zoo
+from detectron.config import get_cfg
+from detectron.export.torchscript_patch import (
     freeze_training_mode,
     patch_builtin_len,
     patch_instances,
 )
-from detectron2.layers import ShapeSpec
-from detectron2.modeling.proposal_generator.build import build_proposal_generator
-from detectron2.modeling.roi_heads import (
+from detectron.layers import ShapeSpec
+from detectron.modeling.proposal_generator.build import build_proposal_generator
+from detectron.modeling.roi_heads import (
     FastRCNNConvFCHead,
     KRCNNConvDeconvUpsampleHead,
     MaskRCNNConvUpsampleHead,
     StandardROIHeads,
     build_roi_heads,
 )
-from detectron2.projects import point_rend
-from detectron2.structures import BitMasks, Boxes, ImageList, Instances, RotatedBoxes
-from detectron2.utils.env import TORCH_VERSION
-from detectron2.utils.events import EventStorage
-from detectron2.utils.testing import assert_instances_allclose, random_boxes
+from detectron.projects import point_rend
+from detectron.structures import BitMasks, Boxes, ImageList, Instances, RotatedBoxes
+from detectron.utils.env import TORCH_VERSION
+from detectron.utils.events import EventStorage
+from detectron.utils.testing import assert_instances_allclose, random_boxes
 
 logger = logging.getLogger(__name__)
 

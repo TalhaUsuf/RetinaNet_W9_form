@@ -2,7 +2,7 @@
 import unittest
 import torch
 
-from detectron2.structures.masks import BitMasks, PolygonMasks, polygons_to_bitmask
+from detectron.structures.masks import BitMasks, PolygonMasks, polygons_to_bitmask
 
 
 class TestBitMask(unittest.TestCase):

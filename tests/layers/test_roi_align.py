@@ -7,7 +7,7 @@ import torch
 from fvcore.common.benchmark import benchmark
 from torch.nn import functional as F
 
-from detectron2.layers.roi_align import ROIAlign, roi_align
+from detectron.layers.roi_align import ROIAlign, roi_align
 
 
 class ROIAlignTest(unittest.TestCase):
@@ -130,7 +130,7 @@ class ROIAlignTest(unittest.TestCase):
 
 def grid_sample_roi_align(input, boxes, output_size, scale, sampling_ratio):
     # unlike true roi_align, this does not support different batch_idx
-    from detectron2.projects.point_rend.point_features import (
+    from detectron.projects.point_rend.point_features import (
         generate_regular_grid_point_coords,
         get_point_coords_wrt_image,
         point_sample,

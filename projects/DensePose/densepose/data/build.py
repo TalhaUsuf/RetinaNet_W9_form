@@ -9,18 +9,18 @@ from typing import Any, Callable, Collection, Dict, Iterable, List, Optional, Se
 import torch
 from torch.utils.data.dataset import Dataset
 
-from detectron2.config import CfgNode
-from detectron2.data.build import build_detection_test_loader as d2_build_detection_test_loader
-from detectron2.data.build import build_detection_train_loader as d2_build_detection_train_loader
-from detectron2.data.build import (
+from detectron.config import CfgNode
+from detectron.data.build import build_detection_test_loader as d2_build_detection_test_loader
+from detectron.data.build import build_detection_train_loader as d2_build_detection_train_loader
+from detectron.data.build import (
     load_proposals_into_dataset,
     print_instances_class_histogram,
     trivial_batch_collator,
     worker_init_reset_seed,
 )
-from detectron2.data.catalog import DatasetCatalog, Metadata, MetadataCatalog
-from detectron2.data.samplers import TrainingSampler
-from detectron2.utils.comm import get_world_size
+from detectron.data.catalog import DatasetCatalog, Metadata, MetadataCatalog
+from detectron.data.samplers import TrainingSampler
+from detectron.utils.comm import get_world_size
 
 from densepose.config import get_bootstrap_dataset_config
 from densepose.modeling import build_densepose_embedder

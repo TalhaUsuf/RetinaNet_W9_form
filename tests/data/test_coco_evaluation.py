@@ -11,10 +11,10 @@ import torch
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 
-from detectron2.data import DatasetCatalog
-from detectron2.evaluation import COCOEvaluator
-from detectron2.evaluation.fast_eval_api import COCOeval_opt
-from detectron2.structures import Boxes, Instances
+from detectron.data import DatasetCatalog
+from detectron.evaluation import COCOEvaluator
+from detectron.evaluation.fast_eval_api import COCOeval_opt
+from detectron.structures import Boxes, Instances
 
 
 class TestCOCOeval(unittest.TestCase):

@@ -6,8 +6,8 @@ from copy import deepcopy
 import torch
 from torchvision import ops
 
-from detectron2.layers import batched_nms, batched_nms_rotated, nms_rotated
-from detectron2.utils.testing import random_boxes
+from detectron.layers import batched_nms, batched_nms_rotated, nms_rotated
+from detectron.utils.testing import random_boxes
 
 
 def nms_edit_distance(keep1, keep2):

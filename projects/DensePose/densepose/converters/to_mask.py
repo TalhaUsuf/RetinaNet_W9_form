@@ -2,7 +2,7 @@
 
 from typing import Any, Tuple
 
-from detectron2.structures import BitMasks, Boxes
+from detectron.structures import BitMasks, Boxes
 
 from .base import BaseConverter
 
