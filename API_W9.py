@@ -7,6 +7,7 @@ from typing import List
 from fastapi import FastAPI, status
 import random
 import uvicorn
+import numpy as np
 import pandas as pd
 import sqlite3
 import shutil
@@ -44,10 +45,11 @@ class output_model(BaseModel):
       b64_imgs : List[str]
       scores : List[List[float]]
       bboxes : List[List[List[float]]]
-      classes : List[List[int]]
+      classes : List[List[str]]
       w9_images : List[str]
       other_images : List[str]
-      detections : List[int]
+      processed_images : List[str]
+      w9_bool_filter : List[np.bool]
 
 
 
@@ -117,9 +119,42 @@ async def insert_to_db(fpath : str):
         boxes = preds["pred_boxes"]
         scores = preds["scores"]
         cls = preds["pred_classes"]
+        idx2cls = {i:k for i,k in enumerate(["tl1","tl2","c1","c2","p11","p12"])}
+        cls_res = [[idx2cls[k] for k in m] for m in cls]
+        processed_images = np.array(preds["images_processed"])
+        
+        # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        #                      decision logic   
+        # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        filtered_w9 = np.array([True if len(k)>=2 else False for k in cls]).astype(np.bool)
 
 
-    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        w9_imgs_paths = list(processed_images[filtered_w9])
+        invoice_paths = list(set(list(processed_images)) - set(list(w9_imgs_paths)))
+        
+        # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        #    save the separated images as W9 images and invoice images in separate folders   
+        # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        if os.path.exists("filtered_w9"):
+            shutil.rmtree("filtered_w9")
+        Path("filtered_w9").mkdir(parents=True, exist_ok=True)
+
+        if os.path.exists("filtered_invoices"):
+            shutil.rmtree("filtered_invoices")
+        Path("filtered_invoices").mkdir(parents=True, exist_ok=True)
+
+        # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        #                      copy to the respective dirs.
+        # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        [shutil.copy(w9, "filtered_w9") for w9 in w9_imgs_paths]
+        [shutil.copy(inv, "filtered_invoices") for inv in invoice_paths]
+
+        w9_resonse = list(Path("filtered_w9").glob("*.jpg"))
+        w9_resonse = [k.as_posix() for k in w9_resonse]
+        invoice_resonse = list(Path("filtered_invoices").glob("*.jpg"))
+        invoice_resonse = [c.as_posix() for c in invoice_resonse]
+        # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     #                      for pdf files
     # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     # with Console().status("processing pdf ... ", spinner="bouncingBall"):
@@ -160,18 +195,19 @@ async def insert_to_db(fpath : str):
       # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
       # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        dummy = {
+        resp = {
         "fpath" : f"{fpath}",
         "b64_imgs" : encoded_strings,
         "scores" : scores,
         "bboxes" : boxes,
-        "classes" : cls,
-        "w9_images" : ["sdgdfsgdf", "dsgdfsgdfgdf0"],
-        "other_images" : ["dsgfdsgdf", "dsgdsg"],
-        "detections" : [1,0,0,1,1,0],
+        "classes" : cls_res,
+        "w9_images" : w9_resonse,
+        "other_images" : invoice_resonse,
+        "processed_images":list(processed_images),
+        "w9_bool_filter" : list(filtered_w9),
         }
 
-        return dummy
+        return resp
 
 
 

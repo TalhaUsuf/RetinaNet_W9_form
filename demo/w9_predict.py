@@ -117,7 +117,7 @@ if __name__ == "__main__":
             preds.setdefault("pred_boxes", []).append(predictions["instances"].get_fields()["pred_boxes"].tensor.cpu().numpy().tolist())
             preds.setdefault("scores", []).append(predictions["instances"].get_fields()["scores"].cpu().numpy().tolist())
             preds.setdefault("pred_classes", []).append(predictions["instances"].get_fields()["pred_classes"].cpu().numpy().tolist())
-
+            preds.setdefault("images_processed", []).append(path)
 
 
 
