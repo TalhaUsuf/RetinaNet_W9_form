@@ -1,11 +1,16 @@
 import os
 import joblib
 from pymongo import MongoClient
-from pydantic import BaseModel,FilePath
+from pydantic import BaseModel,FilePath, AnyUrl
 from pathlib import Path
 from typing import List
-from fastapi import FastAPI, status, File, UploadFile
+from fastapi import FastAPI, status, File, UploadFile, Response
+from fastapi.responses import  StreamingResponse
+import zipfile
+import requests
+from io import StringIO, BytesIO
 import random
+from starlette.responses import FileResponse, RedirectResponse
 import uvicorn
 import numpy as np
 import pandas as pd
@@ -51,6 +56,22 @@ class output_model(BaseModel):
       processed_images : List[str]
       w9_bool_filter : List[np.bool]
 
+
+class upload_model(BaseModel):
+    W9_images: List[str]
+    invoice_images: List[str]
+    visit_url: AnyUrl
+
+
+
+@app.router.get('/download_file/{zip_name:path}')
+async def get_file(zip_name:str):
+    zip_filename = zip_name
+    resp = FileResponse(zip_filename, media_type="application/x-zip-compressed")
+    # ..and correct content-disposition
+    # resp.headers["Content-Disposition"] = 'attachment; filename=%s' % zip_filename
+    
+    return resp
 
 
 @app.get('/status')
@@ -210,10 +231,11 @@ async def recognize(fpath : str):
         return resp
 
 
-@app.post('/upload_file/', response_model=output_model, status_code=status.HTTP_201_CREATED)
+# @app.post('/upload_file/', response_model=upload_model, status_code=status.HTTP_201_CREATED)
+@app.router.post('/upload_file/')
 async def upload_file(fpath : UploadFile = File(...)):
     '''
-    receives a file from user and sends a json response
+    receives a file from user and sends a zipped file
 
 
     Parameters
@@ -223,8 +245,8 @@ async def upload_file(fpath : UploadFile = File(...)):
 
     Returns
     -------
-    resp : json
-        json response
+    resp : .zip
+        Zipped file containing the separated images
     '''
     # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     #                      write received file to disk   
@@ -333,19 +355,31 @@ async def upload_file(fpath : UploadFile = File(...)):
             #
             # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-            resp = {
-                "fpath": f"{fpath}",
-                "b64_imgs": encoded_strings,
-                "scores": scores,
-                "bboxes": boxes,
-                "classes": cls_res,
-                "w9_images": w9_resonse,
-                "other_images": invoice_resonse,
-                "processed_images": list(processed_images),
-                "w9_bool_filter": list(filtered_w9),
-            }
+            # resp = {
+            #     "fpath": f"{fpath}",
+            #     "b64_imgs": encoded_strings,
+            #     "scores": scores,
+            #     "bboxes": boxes,
+            #     "classes": cls_res,
+            #     "w9_images": w9_resonse,
+            #     "other_images": invoice_resonse,
+            #     "processed_images": list(processed_images),
+            #     "w9_bool_filter": list(filtered_w9),
+            # }
+            # 
+            # return resp
+            
+            # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            #                      return zip file instead of json response   
+            # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-            return resp
+            # return {
+            #     "W9_images" : w9_resonse,
+            #     "invoice_images" : invoice_resonse,
+            #     "visit_url" : "http://127.0.0.1:8080/download_file/"
+            # }
+            return RedirectResponse("/download_file/W9.zip", status_code=status.HTTP_302_FOUND)
+
 
 
 
