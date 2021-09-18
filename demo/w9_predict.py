@@ -68,7 +68,7 @@ def get_parser():
     parser.add_argument(
         "--opts",
         help="Modify config options using the command-line 'KEY VALUE' pairs",
-        default=["MODEL.WEIGHTS" ,"./model_0012999.pth"],
+        default=["MODEL.WEIGHTS" ,"./model_0012999.pth", "MODEL.DEVICE", "cpu"],
         nargs=argparse.REMAINDER,
     )
     return parser
